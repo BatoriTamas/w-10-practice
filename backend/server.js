@@ -63,7 +63,7 @@ app.post('/upload', (req, res) => {
     return res.status(400).send('No files were uploaded.');
   }
 
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  // The name of the input field (i.e. "uploadedFile") is used to retrieve the uploaded file
 	uploadedFile = req.files.image;
 	imageName = req.body.name;
   savePath = `${__dirname}/../frontend/public/${imageName}.jpg`;

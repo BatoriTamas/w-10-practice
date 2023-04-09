@@ -21,7 +21,7 @@ app.get('/data/:id', (req, res) => {
 		console.log(searchId)
 
 		if(isNaN(searchId)) {
-			res.status(418).send("NaN")
+			res.status(418).send("I am not a number. I am a free man.")
 		} else {
 			fs.readFile(`data/data.json`, (err, data) => {
 				let result = null
@@ -36,7 +36,7 @@ app.get('/data/:id', (req, res) => {
 				}
 				
 				if(result === null) {
-					res.status(404).send("nincs ilyen user wazze")
+					res.status(404).send("This beer does not exist.")
 				} else {
 					res.send(result)
 				}
@@ -45,7 +45,7 @@ app.get('/data/:id', (req, res) => {
 
 	} catch(error){
 		console.log(error)
-		res.send("Elbénáztuk, Béláim")
+		res.send("You're in trouble, dear")
 	}
 })
 
